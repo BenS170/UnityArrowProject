@@ -6,7 +6,7 @@ public class PlayerScript : MonoBehaviour
 {
     public int currHealth;
     public int maxHealth;
-    public LogicScript logic;
+    private LogicScript logic;
     public HealthBarScript healthBar;
 
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class PlayerScript : MonoBehaviour
             healthBar.SetHealth(currHealth);
         }else if(currHealth <= 0)
         {
-            logic.restartGame();
+            logic.GameOver();
         }
     }
 

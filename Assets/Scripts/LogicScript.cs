@@ -9,7 +9,7 @@ public class LogicScript : MonoBehaviour
     public int playerScore = 0;
     public Text scoreText;
     public Text highScoreText;
-    public GameObject gameOverScreen;
+    public GameOverScreen gameOverScreen;
     public AudioSource addScoreSound;
 
     public void AddScore()
@@ -21,5 +21,10 @@ public class LogicScript : MonoBehaviour
     public void restartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void GameOver()
+    {
+        gameOverScreen.Setup(playerScore);
     }
 }
